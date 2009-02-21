@@ -18,4 +18,13 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
     @recipe.save ? redirect_to(recipes_url) : render(:action => 'new')
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update_attributes(params[:recipe]) ? redirect_to(recipes_url) : render(:action => 'edit')
+  end
 end

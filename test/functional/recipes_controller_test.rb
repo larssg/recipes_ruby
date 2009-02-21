@@ -85,5 +85,43 @@ class RecipesControllerTest < ActionController::TestCase
       should_render_template :new
       should_assign_to :recipe
     end
+
+    context "on GET to :edit" do
+      setup do
+        @recipe = Factory(:recipe)
+        get :edit, :id => @recipe
+      end
+      
+      should_respond_with :success
+      should_not_set_the_flash
+      should_render_template :edit
+      should_assign_to :recipe
+    end
+
+    context "on PUT to :update with good data" do
+      setup do
+        @recipe = Factory(:recipe)
+        put :update, :id => @recipe, :recipe => { :name => 'Changed name' }
+      end
+
+      should_respond_with :redirect
+      should_assign_to :recipe
+      
+      should "update name" do
+        @recipe.reload
+        assert_equal 'Changed name', @recipe.name
+      end
+    end
+    
+    context "on PUT to :update with bad data" do
+      setup do
+        @recipe = Factory(:recipe)
+        put :update, :id => @recipe, :recipe => { :name => '' }
+      end
+      
+      should_respond_with :success
+      should_render_template :edit
+      should_assign_to :recipe
+    end
   end
 end
