@@ -86,6 +86,22 @@ class RecipesControllerTest < ActionController::TestCase
       should_assign_to :recipe
     end
 
+    context "on POST to :create with fake user_id" do
+      setup do
+        @recipe = Factory.attributes_for(:recipe)
+        @recipe[:user_id] = 10000
+        post :create, :recipe => @recipe
+      end
+      
+      should_respond_with :redirect
+      should_assign_to :recipe
+
+      should "not use the fake user_id" do
+        recipe = Recipe.first(:conditions => { :name => @recipe[:name] })
+        assert_not_equal 10000, recipe.user_id
+      end
+    end
+
     context "on GET to :edit" do
       setup do
         @recipe = Factory(:recipe)

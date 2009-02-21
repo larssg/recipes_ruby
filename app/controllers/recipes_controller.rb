@@ -14,9 +14,12 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(params[:recipe])
-    @recipe.user = current_user
-    @recipe.save ? redirect_to(recipes_url) : render(:action => 'new')
+    @recipe = current_user.recipes.build(params[:recipe])
+    if @recipe.save
+      redirect_to recipes_url
+    else
+      render :action => 'new'
+    end
   end
 
   def edit
@@ -25,6 +28,10 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.update_attributes(params[:recipe]) ? redirect_to(recipes_url) : render(:action => 'edit')
+    if @recipe.update_attributes(params[:recipe])
+      redirect_to(recipes_url)
+    else
+      render(:action => 'edit')
+    end
   end
 end
