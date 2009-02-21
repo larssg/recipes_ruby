@@ -1,0 +1,7 @@
+- form_for recipe do |f|
+  = f.text_field :name
+  = f.text_field :portions
+  %label
+    Instructions
+    = f.text_area :instructions
+  = f.submit 'Save'

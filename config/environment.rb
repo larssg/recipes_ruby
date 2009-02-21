@@ -28,6 +28,9 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "thoughtbot-clearance", :lib => 'clearance', :source  => 'http://gems.github.com'
+  config.gem 'thoughtbot-shoulda', :lib => 'shoulda', :source => "http://gems.github.com"
+  config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => "http://gems.github.com"
+
   config.gem 'jscruggs-metric_fu', :version => '0.9.0', :lib => 'metric_fu', :source => 'http://gems.github.com'
   
   # Only load the plugins named here, in the order given. By default, all plugins 

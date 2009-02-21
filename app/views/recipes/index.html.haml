@@ -1,0 +1,7 @@
+- title 'Recipes'
+
+%ul.recipes
+  - @recipes.each do |recipe|
+    %li= link_to recipe.name, recipe
+
+= link_to 'Create recipe', new_recipe_path

@@ -1,0 +1,12 @@
+!!! Strict
+%html{ :xmlns => 'http://www.w3.org/1999/xhtml', :lang => "en" }
+  %head
+    %title= page_title
+    = stylesheet_link_tag 'http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css'
+    = stylesheet_link_tag 'screen'
+  %body
+    #doc3
+      #hd
+      #bd
+        = yield 
+      #ft
