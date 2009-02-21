@@ -100,6 +100,11 @@ class RecipesControllerTest < ActionController::TestCase
         recipe = Recipe.first(:conditions => { :name => @recipe[:name] })
         assert_not_equal 10000, recipe.user_id
       end
+
+      should "use the current user's id" do
+        recipe = Recipe.first(:conditions => { :name => @recipe[:name] })
+        assert_equal @user.id, recipe.user_id
+      end
     end
 
     context "on GET to :edit" do
