@@ -1,18 +1,19 @@
 - title @recipe.name
 
-#portions
-  %label Portions
-  = @recipe.portions
+#recipe
+  #portions
+    %h3 Portions
+    = @recipe.portions
+    
+  #ingredients
+    %h3 Ingredients
+    %ul
+      - @recipe.recipe_ingredients.each do |ri|
+        %li= ri
 
-#ingredients
-  %label Ingredients
-  %ul
-    - @recipe.recipe_ingredients.each do |ri|
-      %li= ri
+  #instructions
+    %h3 Instructions
+    = simple_format(h(@recipe.instructions))
 
-#instructions
-  %label Instructions
-  = @recipe.instructions
-
-#actions
-  = link_to 'Edit recipe', edit_recipe_path(@recipe)
+  #actions
+    = link_to 'Edit recipe', edit_recipe_path(@recipe)

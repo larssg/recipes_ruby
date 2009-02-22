@@ -4,7 +4,7 @@ module ApplicationHelper
     @page_title = new_title
   end
 
-  def page_title
-    [@page_title, 'Recipes'].select { |t| !t.blank? }.join(' :: ')
+  def page_title(extra = nil)
+    [@page_title, extra].select { |t| !t.blank? }.join(' :: ')
   end
 end

@@ -41,11 +41,27 @@ class RecipeIngredientTest < ActiveSupport::TestCase
     assert_equal 'Cucumber', recipe_ingredient.name
   end
 
-  should "return properly formatted ingredient when called with .to_s" do
+  should "format ingredient" do
     recipe_ingredient = Factory(:recipe_ingredient, :amount => 3, :unit => 'big', :extra => '(Filippa)')
     recipe_ingredient.name = 'apples'
     recipe_ingredient.save
     
     assert_equal "3 big apples (Filippa)", recipe_ingredient.to_s
+  end
+
+  should "format ingredient when the amount is not an integer" do
+    recipe_ingredient = Factory(:recipe_ingredient, :amount => 3.5, :unit => 'big', :extra => '(Filippa)')
+    recipe_ingredient.name = 'apples'
+    recipe_ingredient.save
+    
+    assert_equal "3.5 big apples (Filippa)", recipe_ingredient.to_s
+  end
+
+  should "format ingredient with amount = nil" do
+    recipe_ingredient = Factory(:recipe_ingredient, :unit => 'big', :extra => '(Filippa)')
+    recipe_ingredient.name = 'apples'
+    recipe_ingredient.save
+    
+    assert_equal "big apples (Filippa)", recipe_ingredient.to_s
   end
 end

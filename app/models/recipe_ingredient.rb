@@ -24,6 +24,10 @@ class RecipeIngredient < ActiveRecord::Base
 
   protected
   def format_amount
-    self.amount % 1 == 0 ? self.amount.to_i : self.amoun
+    amount_is_integer? ? self.amount.to_i : self.amount
+  end
+
+  def amount_is_integer?
+    self.amount.andand.%(1) == 0
   end
 end

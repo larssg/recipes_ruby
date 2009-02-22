@@ -158,3 +158,27 @@ form label.field-phone {
 
 textarea {
   display: block; }
+
+#hd h1 {
+  display: block;
+  font-size: 146.5%;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  #hd h1 a {
+    text-decoration: none;
+    color: #000000; }
+#hd h2 {
+  padding: 3px;
+  font-weight: bold;
+  font-size: 131%;
+  background-color: #E5ECF9;
+  border-top: 1px solid #3366CC;
+  margin-bottom: 10px; }
+
+#bd h3 {
+  font-weight: bold; }
+#bd #recipe #portions, #bd #recipe #ingredients {
+  margin-bottom: 1em; }
+#bd #recipe #instructions p {
+  margin-bottom: 1em; }
