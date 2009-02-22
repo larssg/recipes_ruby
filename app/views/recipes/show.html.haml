@@ -4,6 +4,12 @@
   %label Portions
   = @recipe.portions
 
+#ingredients
+  %label Ingredients
+  %ul
+    - @recipe.recipe_ingredients.each do |ri|
+      %li= ri
+
 #instructions
   %label Instructions
   = @recipe.instructions

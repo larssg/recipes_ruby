@@ -1,5 +1,14 @@
-- form_for recipe do |f|
+- form_for setup_recipe(recipe) do |f|
   = f.text_field :name
+  #ingredients
+    %label
+      Ingredients
+      - f.fields_for :recipe_ingredients do |ingredients_form|
+        = ingredients_form.text_field :amount, :class => "field-quarter-first"
+        = ingredients_form.text_field :unit, :class => "field-quarter"
+        = ingredients_form.text_field :name, :class => "field-quarter"
+        = ingredients_form.text_field :extra, :class => "field-quarter-last"
+
   = f.text_field :portions
   %label
     Instructions

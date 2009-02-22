@@ -3,7 +3,7 @@
   padding: 0; }
 
 form {
-  width: 280px;
+  width: 500px;
   text-align: left; }
   form h3 {
     clear: both;
@@ -11,45 +11,45 @@ form {
     font-size: 14px; }
   form label {
     display: block;
-    width: 270px;
+    width: 480px;
     font-size: 12px;
     line-height: 14px;
     padding: 0px 0px 12px 0px; }
     form label.field {
       clear: left;
       float: left;
-      width: 270px;
+      width: 480px;
       margin: 0px 0px 0px 0px; }
       form label.field input {
         float: left;
-        width: 270px;
+        width: 480px;
         padding: 0px; }
-    form label.field-first {
+    form label.field-first, form label.field-quarter-first {
       float: left;
       margin: 0px 10px 0px 0px;
-      width: 130px; }
-      form label.field-first input {
+      width: 235px; }
+      form label.field-first input,       form label.field-quarter-first input {
         float: left;
-        width: 130px;
+        width: 235px;
         padding: 0px; }
-      form label.field-first select {
-        width: 130px;
+      form label.field-first select,       form label.field-quarter-first select {
+        width: 235px;
         float: left;
         margin-top: 3px; }
     form label.field-state {
       float: left;
       margin-right: 10px;
-      width: 50px; }
+      width: 102px; }
       form label.field-state select {
-        width: 50px;
+        width: 102px;
         float: left;
         margin-top: 3px; }
     form label.field-zip {
       float: left;
-      width: 70px; }
+      width: 122px; }
       form label.field-zip input {
         float: left;
-        width: 70px; }
+        width: 122px; }
     form label.radiobutton {
       clear: none;
       margin: 0px 0px 0px 25px;
@@ -97,54 +97,63 @@ legend {
 fieldset>legend {
   left: 0; }
 
-form label.field-first {
-  clear: left; }
+form label.field-first, form label.field-quarter-first {
+  clear: left;
+  margin: 0; }
+form label.field-quarter-first, form label.field-quarter, form label.field-quarter-last {
+  width: 122px; }
+  form label.field-quarter-first input,   form label.field-quarter input,   form label.field-quarter-last input {
+    float: left;
+    width: 112px;
+    margin: 0; }
+form label.field-quarter, form label.field-quarter-last {
+  float: left; }
 form label.field-address {
   clear: left;
   float: left;
-  width: 270px;
+  width: 480px;
   margin: 0px 0px 0px 0px; }
   form label.field-address input {
     float: left;
-    width: 270px;
+    width: 480px;
     padding: 0px; }
 form label.field-city {
   clear: left;
   float: left;
   margin: 0px 10px 0px 0px;
-  width: 130px; }
+  width: 235px; }
   form label.field-city input {
     float: left;
-    width: 130px;
+    width: 235px;
     padding: 0px; }
 form label.field-email {
   clear: left;
   float: left;
   margin: 0px 10px 0px 0px;
-  width: 130px; }
+  width: 235px; }
   form label.field-email input {
     float: left;
-    width: 130px;
+    width: 235px;
     padding: 0px; }
 form label.field-last {
   float: left;
   margin: 0px 10px 0px 0px;
-  width: 130px; }
+  width: 235px; }
   form label.field-last input {
     float: left;
-    width: 130px;
+    width: 235px;
     padding: 0px; }
   form label.field-last select {
-    width: 130px;
+    width: 235px;
     float: left;
     margin-top: 3px; }
 form label.field-phone {
   float: left;
   margin: 0px 10px 0px 0px;
-  width: 130px; }
+  width: 235px; }
   form label.field-phone input {
     float: left;
-    width: 130px;
+    width: 235px;
     padding: 0px; }
 
 textarea {

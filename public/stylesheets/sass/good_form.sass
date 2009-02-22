@@ -1,7 +1,7 @@
 // 360px
-!good_form_outer_width          = 280px
+!good_form_outer_width          = 500px
 // 310px
-!good_form_full_width           = 270px
+!good_form_full_width           = 480px
 // 10px
 !good_form_padding              = 10px
 // 150px
@@ -44,7 +44,7 @@ form
         :width = !good_form_full_width
         :padding 0px
 
-    &.field-first
+    &.field-first, &.field-quarter-first
       :float left
       :margin 0px 10px 0px 0px
       :width = !good_form_half_width
@@ -135,8 +135,20 @@ fieldset>legend
 
 
 form label
-  &.field-first
+  &.field-first, &.field-quarter-first
     :clear left
+    :margin 0
+
+  &.field-quarter-first, &.field-quarter, &.field-quarter-last
+    :width = !good_form_quarter_width
+
+    input
+      :float left
+      :width = !good_form_quarter_width - 10px
+      :margin 0
+
+  &.field-quarter, &.field-quarter-last
+    :float left
 
   &.field-address
     :clear left
