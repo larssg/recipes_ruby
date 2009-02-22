@@ -1,12 +1,15 @@
 !!! Strict
 %html{ :xmlns => 'http://www.w3.org/1999/xhtml', :lang => "en" }
   %head
-    %title= page_title
+    %title= page_title('Recipes')
     = stylesheet_link_tag 'http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css'
     = stylesheet_link_tag 'screen'
+    = stylesheet_link_tag 'print', :media => 'print'
   %body
     #doc3
       #hd
+        %h1= link_to 'Recipes', root_url
+        %h2= page_title
       #bd
         = yield 
       #ft

@@ -1,0 +1,56 @@
+body
+  :font-family Georgia
+
+#hd
+  h1
+    :display none
+
+#bd
+  h3
+    :font-weight bold
+    :margin 0
+
+  ul
+    :margin 0
+    :padding 0
+
+    li
+      :margin 0
+      :padding 0
+      :list-style none
+
+  #portions
+    :margin-bottom 1em
+    :font-size 85%
+    :font-style italic
+    
+    h3
+      :font-size 100%
+      :font-weight normal
+      :display inline
+      
+      &:after
+        :content ":"
+
+  #ingredients, #instructions
+    h3
+      :display none
+
+  #ingredients
+    :clear both
+    :width 24%
+    :float left
+    :margin-right 5%
+    :font-size 85%
+
+  #instructions
+    :width 71%
+    :float left
+
+    p
+      :margin 0
+      :padding 0
+      :margin-bottom 1em
+
+  #actions
+    :display none
